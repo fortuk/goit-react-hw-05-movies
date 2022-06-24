@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import * as api from "../../services/api";
+import propTypes from "prop-types";
 import s from "./MovieReviewsView.module.css";
 
 export default function MovieReview({ movieId }) {
@@ -28,3 +29,6 @@ export default function MovieReview({ movieId }) {
     </div>
   );
 }
+MovieReview.propTypes = {
+  movieId: propTypes.string.isRequired,
+};
