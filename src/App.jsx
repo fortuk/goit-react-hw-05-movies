@@ -34,7 +34,7 @@ function App() {
           <Route path="/movies/:movieId">
             <MovieDetailsView />
           </Route>
-          <Route path="/">
+          <Route path="/" exact>
             <NotFoundView />
           </Route>
         </Switch>

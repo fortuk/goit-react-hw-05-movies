@@ -33,5 +33,5 @@ export default function MovieCastView({ movieId }) {
 }
 
 MovieCastView.propTypes = {
-    movieId: propTypes.func.isRequired,
+    movieId: propTypes.string.isRequired,
 };

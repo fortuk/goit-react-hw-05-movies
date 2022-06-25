@@ -3,11 +3,11 @@ import {
   useParams,
   useLocation,
   useHistory,
-  NavLink,
   useRouteMatch,
   Switch,
   Route,
 } from "react-router-dom";
+import { NavLink } from 'react-router-dom'
 import * as api from "../../services/api";
 import Loader from "react-loader-spinner";
 import s from "./MovieDetailsView.module.css";
