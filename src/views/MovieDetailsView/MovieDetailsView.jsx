@@ -21,6 +21,7 @@ export default function MovieDetailsView() {
   const { url, path } = useRouteMatch();
   const history = useHistory();
   const location = useLocation();
+  const [from, setFrom] = useState(location?.state?.from ?? "/");
 
   useEffect(() => {
     api.fetchMovieById(movieId).then((movie) => {
@@ -29,7 +30,9 @@ export default function MovieDetailsView() {
   }, [movieId]);
 
   const goBack = () => {
-    history.push(location?.state?.from ?? "/");
+    console.log("onGoBack ~ from: ", from);
+    history.push(from);
+    history.push({ type: "go_back" });
   };
   return (
     <>

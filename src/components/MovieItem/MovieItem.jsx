@@ -1,5 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import s from "./MovieItem.module.css";
+import propTypes from "prop-types";
 
 const MovieItem = ({ movies }) => {
   const location = useLocation();
@@ -26,5 +27,7 @@ const MovieItem = ({ movies }) => {
     </ul>
   );
 };
-
+MovieItem.propTypes = {
+  movies: propTypes.string.isRequired,
+};
 export default MovieItem;
