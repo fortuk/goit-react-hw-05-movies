@@ -8,7 +8,7 @@ import s from './SearchBar.module.css';
 const SearchBar = ({ onClick }) => {
     const location = useLocation();
     const searchParams = new URLSearchParams(location.search).get("query");
-    const [searchQuery, setSearchQuery] = useState("");
+    const [searchQuery, setSearchQuery] = useState(searchParams ?? "");
 
     const handleChange = (e) => {
         setSearchQuery(e.target.value);
