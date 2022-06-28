@@ -1,6 +1,6 @@
-import { Link, useLocation } from "react-router-dom";
-import s from "./MovieItem.module.css";
-import propTypes from "prop-types";
+import { Link, useLocation } from 'react-router-dom';
+import s from './MovieItem.module.css';
+import propTypes from 'prop-types';
 
 const MovieItem = ({ movies }) => {
   const location = useLocation();
@@ -28,6 +28,12 @@ const MovieItem = ({ movies }) => {
   );
 };
 MovieItem.propTypes = {
-  movies: propTypes.string.isRequired,
+  movies: propTypes.arrayOf(
+    propTypes.shape({
+      id: propTypes.number.isRequired,
+      name: propTypes.string.isRequired,
+      poster_path: propTypes.string.isRequired,
+    }),
+  ).isRequired,
 };
 export default MovieItem;

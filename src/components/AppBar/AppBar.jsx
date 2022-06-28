@@ -1,6 +1,6 @@
-import React from "react";
-import Navigation from "../Navigation/Navigation";
-import s from "./AppBar.module.css";
+import React from 'react';
+import Navigation from '../Navigation/Navigation';
+import s from './AppBar.module.css';
 
 export default function AppBar() {
   return (

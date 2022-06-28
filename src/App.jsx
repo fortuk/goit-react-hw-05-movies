@@ -1,8 +1,9 @@
-import { Switch, Route } from "react-router-dom";
+import { Route } from 'react-router-dom';
+import { Switch } from 'react-switch'
 import { lazy, Suspense } from "react";
-import AppBar from "./components/AppBar/AppBar";
-import Container from "./components/Container/Container";
-import Loader from "./components/Loader/Loader";
+import AppBar from './components/AppBar/AppBar';
+import Container from './components/Container/Container';
+import Loader from './components/Loader/Loader';
 
 const HomeView = lazy(() =>
   import("./views/HomeView/HomeView" /* webpackChunkName: "home-view" */)
@@ -34,7 +35,7 @@ function App() {
           <Route path="/movies/:movieId">
             <MovieDetailsView />
           </Route>
-          <Route path="/" exact>
+          <Route path="*" exact>
             <NotFoundView />
           </Route>
         </Switch>

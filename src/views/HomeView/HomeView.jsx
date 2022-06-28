@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react";
-import * as api from "../../services/api";
-import MovieItem from "../../components/MovieItem/MovieItem";
-import s from "./HomeView.module.css";
+import { useState, useEffect } from 'react';
+import * as api from '../../services/api';
+import MovieItem from '../../components/MovieItem/MovieItem';
+import s from './HomeView.module.css';
 
 export default function HomeView() {
   const [movies, setMovies] = useState([]);

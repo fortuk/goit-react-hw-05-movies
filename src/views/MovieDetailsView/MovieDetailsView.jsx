@@ -1,4 +1,4 @@
-import { useState, useEffect, lazy, Suspense } from "react";
+import { useState, useEffect, lazy, Suspense } from 'react';
 import {
   useParams,
   useLocation,
@@ -6,14 +6,14 @@ import {
   useRouteMatch,
   Switch,
   Route,
-} from "react-router-dom";
+} from 'react-router-dom';
 import { NavLink } from 'react-router-dom'
-import * as api from "../../services/api";
-import Loader from "react-loader-spinner";
-import s from "./MovieDetailsView.module.css";
+import * as api from '../../services/api';
+import Loader from 'react-loader-spinner';
+import s from './MovieDetailsView.module.css';
 
-const MovieCastView = lazy(() => import("../MovieCast/MovieCastView"));
-const MovieReview = lazy(() => import("../MovieReview/MovieReviewsView"));
+const MovieCastView = lazy(() => import('../MovieCast/MovieCastView'));
+const MovieReview = lazy(() => import('../MovieReview/MovieReviewsView'));
 
 export default function MovieDetailsView() {
   const { movieId } = useParams();
@@ -21,7 +21,7 @@ export default function MovieDetailsView() {
   const { url, path } = useRouteMatch();
   const history = useHistory();
   const location = useLocation();
-  const [from, setFrom] = useState(location?.state?.from ?? "/");
+  const [from, setFrom] = useState('/');
 
   useEffect(() => {
     api.fetchMovieById(movieId).then((movie) => {
@@ -30,15 +30,18 @@ export default function MovieDetailsView() {
   }, [movieId]);
 
   const goBack = () => {
-    console.log("onGoBack ~ from: ", from);
     history.push(from);
-    history.push({ type: "go_back" });
   };
+  useEffect(() => {
+    if (location.state) {
+      setFrom(location.state.from);
+    }
+  }, [location]);
   return (
     <>
       {movie && (
         <>
-          <button className={s.button} type="button" onClick={goBack}>
+          <button className={s.button} type='button' onClick={goBack}>
             Go back
           </button>
           <img
@@ -53,8 +56,8 @@ export default function MovieDetailsView() {
             Overview <span>{movie.overview}</span>
           </p>
           <p>
-            Genres{" "}
-            <span>{movie.genres.map((genre) => genre.name).join(" ")}</span>
+            Genres{' '}
+            <span>{movie.genres.map((genre) => genre.name).join(' ')}</span>
           </p>
           <h3>Additional information</h3>
 
