@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import * as api from '*.gif../../services/api';
+import * as api from '../../services/api';
 import propTypes from 'prop-types';
 import s from './MovieCastView.module.css';
 import noImage from '../../images/noImage.jpg';

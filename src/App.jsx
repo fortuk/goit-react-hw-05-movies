@@ -1,5 +1,4 @@
-import { Route } from 'react-router-dom';
-import { Switch } from 'react-switch'
+import { Switch, Route } from 'react-router-dom';
 import { lazy, Suspense } from "react";
 import AppBar from './components/AppBar/AppBar';
 import Container from './components/Container/Container';
