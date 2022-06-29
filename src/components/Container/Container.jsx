@@ -1,4 +1,4 @@
-import s from './Container.module.css';
+import s from "./Container.module.css";
 import propTypes from 'prop-types';
 
 export default function Container({ children }) {

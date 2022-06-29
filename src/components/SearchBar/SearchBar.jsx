@@ -1,9 +1,9 @@
-import { useState } from 'react';
-import { GoSearch } from 'react-icons/go';
-import { useLocation } from 'react-router-dom';
-import { toast } from 'react-toastify';
-import propTypes from 'prop-types';
-import s from './SearchBar.module.css';
+import { useState } from "react";
+import { useLocation } from "react-router-dom";
+import { GoSearch } from "react-icons/go";
+import { toast } from "react-toastify";
+import propTypes from "prop-types";
+import s from "./SearchBar.module.css";
 
 const SearchBar = ({ onClick }) => {
     const location = useLocation();

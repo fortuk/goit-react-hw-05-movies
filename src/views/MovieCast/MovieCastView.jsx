@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react';
-import * as api from '../../services/api';
-import propTypes from 'prop-types';
-import s from './MovieCastView.module.css';
-import noImage from '../../images/noImage.jpg';
+import { useState, useEffect } from "react";
+import * as api from "../../services/api";
+import propTypes from "prop-types";
+import s from "./MovieCastView.module.css";
+import noImage from "../../images/noImage.jpg";
 
 export default function MovieCastView({ movieId }) {
     const [cast, setCast] = useState([]);
@@ -22,8 +22,8 @@ export default function MovieCastView({ movieId }) {
                                 : noImage
                         }
                         alt={item.name}
-                        width='100'
-                        height='150'
+                        width="100"
+                        height="150"
                     />
                     <p className={s.name}>{item.name}</p>
                 </li>

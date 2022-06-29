@@ -7,7 +7,7 @@ import {
   Switch,
   Route,
 } from 'react-router-dom';
-import { NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom';
 import * as api from '../../services/api';
 import Loader from 'react-loader-spinner';
 import s from './MovieDetailsView.module.css';
@@ -24,7 +24,7 @@ export default function MovieDetailsView() {
   const [from, setFrom] = useState('/');
 
   useEffect(() => {
-    api.fetchMovieById(movieId).then((movie) => {
+    api.fetchMovieById(movieId).then(movie => {
       setMovie(movie);
     });
   }, [movieId]);
@@ -32,16 +32,18 @@ export default function MovieDetailsView() {
   const goBack = () => {
     history.push(from);
   };
+
   useEffect(() => {
     if (location.state) {
       setFrom(location.state.from);
     }
   }, [location]);
+
   return (
     <>
       {movie && (
         <>
-          <button className={s.button} type='button' onClick={goBack}>
+          <button className={s.button} type="button" onClick={goBack}>
             Go back
           </button>
           <img
@@ -57,7 +59,7 @@ export default function MovieDetailsView() {
           </p>
           <p>
             Genres{' '}
-            <span>{movie.genres.map((genre) => genre.name).join(' ')}</span>
+            <span>{movie.genres.map(genre => genre.name).join(' ')}</span>
           </p>
           <h3>Additional information</h3>
 
